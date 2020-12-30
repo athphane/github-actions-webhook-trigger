@@ -17,7 +17,12 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_root(event_type: str, secret: str):
+def home():
+    return {'Hello': 'World'}
+
+
+@app.get("/do")
+def action(event_type: str, secret: str):
     if secret == secret_key:
         headers = {
             'Accept': 'application/vnd.github.everest-preview+json',
