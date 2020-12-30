@@ -21,7 +21,7 @@ def home():
     return {'Hello': 'World'}
 
 
-@app.get("/do")
+@app.post("/do")
 def action(event_type: str, secret: str):
     if secret == secret_key:
         headers = {
