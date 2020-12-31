@@ -36,3 +36,5 @@ def action(event_type: str, secret: str):
         res = requests.post(url, headers=headers, data=data)
 
         return {'status': res.status_code}
+
+    return {'status': 'Unauthenticated'}
